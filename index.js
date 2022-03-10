@@ -56,8 +56,8 @@ app.post('/sms/send',(req,res)=>{
             // Set your message
             message: req.body.msgBody,
             // Set your shortCode or senderId
-            from: process.env.FROM,
-            
+           
+             from: 'MojaTu'
         }
 
         // That’s it, hit send and we’ll take care of the rest
@@ -65,7 +65,7 @@ app.post('/sms/send',(req,res)=>{
             .then(response => {
                 // save data to database
                 try {
-                    Sms.create(req.body);
+                  
                     console.log(response);
                 } catch (error) {
                     console.log(error);
